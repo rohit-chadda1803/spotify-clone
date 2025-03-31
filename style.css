@@ -293,6 +293,14 @@ body{
     gap: 12px;
 }
 
+.songList{
+   box-shadow: 3px 3px 15px black inset;
+   border-radius: 20px;
+   overflow: scroll;
+   scrollbar-width: none;
+   height: 50vh;
+}
+
 
 .songList ul{
      padding: 0 15px;
@@ -300,6 +308,22 @@ body{
 
 .songList ul li {
     list-style-type: decimal;
+    display: flex;
+    gap: 34px;
+    cursor: pointer;
+    padding: 12px 0;
+}
+
+.playnow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.playnow span{
+    font-size: 10px;
+    width: 64px;
 }
 
 
