@@ -15,7 +15,7 @@ async function main() {
     let tds = div.getElementsByTagName("td") ; 
 
     console.log("-----------tds after it-------")
-    console.log(tds)
+    console.log(tds) ; 
 }
 
 main()
