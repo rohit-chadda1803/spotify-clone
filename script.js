@@ -1,21 +1,43 @@
-console.log("js is working") ; 
+console.log("js is working");
 
-async function main() {
-    
-    let a = await fetch("http://127.0.0.1:3000/songs/") ;  
+async function getsongs() {
 
-    let response = await a.text() ; 
+    let a = await fetch("http://127.0.0.1:3000/songs/");
 
-    console.log(response) ; 
+    let response = await a.text();
+
+    console.log(response);
 
     let div = document.createElement("div")
 
-    div.innerHTML = response ; 
+    div.innerHTML = response;
 
-    let tds = div.getElementsByTagName("td") ; 
+    let as = div.getElementsByTagName("a");
 
     console.log("-----------tds after it-------")
-    console.log(tds) ; 
+    console.log(as);
+
+    let songs = [];
+
+    for (let index = 0; index < as.length; index++) {
+        const element = as[index];
+
+        if (element.href.endsWith(".mp3") || element.href.endsWith(".aac")) {
+            songs.push(element.href)
+        }
+
+    }
+    return songs
+
 }
 
-main()
+async function main() {
+    let songs = await getsongs()
+
+    console.log('**********songs are : -------');
+    
+    console.log(songs);
+}
+
+main() ; 
+
