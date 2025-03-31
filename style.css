@@ -1,0 +1,297 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+   margin: 0px;
+   padding: 0px;
+
+   font-family: "Roboto", sans-serif;
+ 
+}
+/* added myself */
+.container{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+body{
+    background-color: #121212;
+    color: white;
+}
+
+.left{
+    width: 25vw;
+    padding: 14px;
+}
+
+.right{
+    width: 75vw;
+   
+}
+
+  
+
+.home ul li{
+    width: 20px ; 
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding-top:24px ;
+
+    font-weight: bold;
+}
+
+.library{
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.heading{
+    width: 100%; 
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding-top:14px ;
+    padding-bottom: 10px;
+
+    padding: 23px 14px;
+
+    font-weight: bold;
+
+    align-items: center;
+    font-size: 13px;
+}
+
+
+.heading img{
+    width: 30px;
+}
+
+.links-list{
+    padding: 2px;
+    display: flex;
+    font-size:12px ; 
+    list-style: none;
+    
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer{
+    position: absolute;
+    bottom:0;
+}
+
+.right{
+   margin: 21px  0px ;
+   position: relative;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #B3B3A4;
+}
+
+.header{
+    width: 95%;/*i added it my self . */
+    display: flex;
+    justify-content: space-between;
+    background: #1F1F1F;
+    align-items: center; /*self added this line*/
+    
+    /*box-sizing: border-box;    added self*/
+
+    height: 10%; /*added self*/
+
+   
+}
+/* this class i changed myself */
+/* .header .buttons button{
+    padding: 10px;
+
+    margin-right: 20px;
+
+    background: white;
+    color: black;
+    font-weight: bolder;
+
+    border: 0px ;
+
+    border-radius: 20px;
+}  */
+
+
+.signupbtn{
+   background: transparent;
+    color:#a9a9a9;
+    font-weight: bold;
+
+    font-size: 16px;
+
+    outline: none;
+    border: none;
+    transition: color 0.3s ease-in-out;
+
+   /* padding-right: 20px;added it myself . */
+}
+
+
+
+.signupbtn:hover{
+   font-size: 17px ; 
+   color: white;
+   cursor: pointer;
+  
+
+}
+
+.loginbtn{
+    background: white;
+    color: black;
+    font-size: 15px;
+    border:none ; 
+    /* padding: 15px 30px;  */
+    width: 100px;
+    height: 50px;
+    
+    font-weight: 700;
+    border-radius: 25px;
+    
+    margin: 2px 20px;
+
+
+}
+ .loginbtn:hover{
+    /* padding: 17px 35px; */ /*in this situation i dont want affect others so better to use , height & width then padding
+    & note : calcatios are impostant , without hover : width =100 , margin =2  , vertical = 50+2*2 = 54 , after hover = 54 + 0*2 =54 , same 
+     , so it wiil not affect , others , i did same for , width also , 100+2*20 == 110 + 15*2 */
+    height: 54px;
+    width: 110px;
+    border-radius: 27.5px; /*in hover i did --> width*1.1   , height*1.1 , radius * 1.1*/
+    cursor: pointer;
+    margin: 0px 15px;
+
+    font-size: 16px;
+    
+} 
+
+
+.header > *{
+    padding: 20px;
+}
+
+.spotify-playlist{
+   padding: 7px;
+}
+
+.spotify-playlist .card{
+
+    width: 177px;
+    background: #1f1f1f;
+    border-radius: 5px;
+    padding: 10px;  
+    position: relative;
+
+}
+
+.cardContainer{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 25px; /*it was 30 i made it 25 . */
+
+    border-radius:7px ;
+
+    /* max-height: 73.5vh; old */
+   
+    max-height: 40vh;
+
+   /* overflow: auto; 
+
+   scrollbar-width: none; */
+
+   
+}
+
+/* chatgpt code start - i used to get a nice scrollbar . */
+.cardContainer {
+    overflow: auto;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #5A5A5A transparent; /* Thin scrollbar */
+    
+    /* Hides scrollbar initially */
+    -ms-overflow-style: none; /* IE & Edge */
+    scrollbar-gutter: stable; /* Keeps layout from shifting */
+}
+
+/* Hide scrollbar completely */
+.cardContainer::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+/* Stylish scrollbar thumb */
+.cardContainer::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #5A5A5A, #444444);
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0; /* Hidden initially */
+}
+
+/* Show scrollbar when scrolling */
+.cardContainer:hover::-webkit-scrollbar-thumb,
+.cardContainer:active::-webkit-scrollbar-thumb {
+    opacity: 1;
+}
+
+/* chatgpt code end  */
+
+
+.card >*{
+    padding-top: 10px;
+}
+
+.card img{
+   width: 100%;
+   object-fit: contain;
+   border-radius: 10px;
+}
+
+.card .play{
+    padding: 0px;
+
+    opacity: 0;
+
+
+    transition: all 1s ease-in-out;
+    
+}
+
+.card .play svg {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+
+    right: 30px;
+    bottom: 90px;
+
+}
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background:  #2FC55C;
+    width: 100%;
+    padding: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+
+
