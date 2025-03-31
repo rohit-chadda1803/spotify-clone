@@ -284,13 +284,22 @@ body{
     position: absolute;
     bottom: 0;
     background:  #2FC55C;
-    width: 100%;
+    width: 90%;
     padding: 12px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
+}
+
+
+.songList ul{
+     padding: 0 15px;
+}
+
+.songList ul li {
+    list-style-type: decimal;
 }
 
 
