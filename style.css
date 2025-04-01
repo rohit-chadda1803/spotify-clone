@@ -43,7 +43,7 @@ body{
 }
 
 .library{
-    min-height: 70vh;
+    min-height: 72vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -281,24 +281,30 @@ body{
 }
 
 .playbar{
-    position: absolute;
-    bottom: 0;
-    background:  #2FC55C;
-    width: 90%;
+    position: fixed;/*it can be absolute but i liked it this way*/
+    bottom: 17px;
+    background:#e2d9d9  ;/*#2FC55C; old*/
+    width: 70vw;
     padding: 12px;
 
+    filter: invert(1) ;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 12px;
+    border-radius: 10px;
+    height :40px ; 
 }
 
-.songList{
-   box-shadow: 3px 3px 15px black inset;
+.songList{/*added self*/
+   box-shadow: 1px 1px 2px black inset; 
    border-radius: 20px;
    overflow: scroll;
    scrollbar-width: none;
    height: 50vh;
+   overflow-x: hidden;
 }
 
 
@@ -312,6 +318,12 @@ body{
     gap: 34px;
     cursor: pointer;
     padding: 12px 0;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 12px 0;
+    padding: 7px 10px;
+
+    overflow-x: hidden;/*added self*/
 }
 
 .playnow{
@@ -322,9 +334,40 @@ body{
 }
 
 .playnow span{
-    font-size: 10px;
+    font-size: 14px;
     width: 64px;
 }
 
 
 
+.songnamebox{ /*added self*/
+    width: 118px;
+    overflow: scroll;
+    scrollbar-width: none;
+    white-space: nowrap;
+    
+}
+
+
+.seekbar{
+   height: 2px;
+   width: 98%;
+   /* border: 2px solid black; */
+   background: black;
+   bottom: 0;
+   position: absolute;
+   border-radius: 10px;   
+   margin: 5px;
+}
+
+.circle{
+    height: 13px;
+    width: 13px;
+    border-radius:18px ;
+    background: #000;
+    position: relative;
+    bottom: 5px;
+    left: 0px;
+
+    transition: left 0.5s;
+}
