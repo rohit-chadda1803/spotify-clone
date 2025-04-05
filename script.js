@@ -1,4 +1,5 @@
 console.log("js is working");
+let currSong = new Audio(); // current song me ek time pr ek hi gaana aur yhi hr jgh chl rha h . 
 
 async function getsongs() {
 
@@ -31,11 +32,22 @@ async function getsongs() {
 
 }
 
+const playTrack = (track)=>{
+    //let audio = new Audio("/songs/"+track) ;// hr baar new audio for that song aur vo pay , agr isse phle koi song to vo hi chlta rhega . 
+    //audio.play() ;  
+
+    currSong.src = "/songs/"+track ; 
+    currSong.play() ; 
+}
+
+
+
+
 async function main() {
     // get the list of  songs . 
-    
-    let currentSong ; 
 
+   
+    
     let songs = await getsongs()
 
     console.log('**********songs are : -------');
@@ -64,6 +76,20 @@ async function main() {
 
 
     }
+
+    // attach an event listner to each song . 
+    console.log("******************* add event listner **************")
+    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
+        // console.log(e) ;  // to see what i got in console. 
+
+        e.addEventListener("click",()=>{
+            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+        
+            playTrack(e.querySelector(".info").firstElementChild.innerHTML.trim())  ; // trim remove spaces aage-peeche se. 
+    
+        })     
+    });
+
 
     // play the first song . 
     var audio = new Audio(songs[0]);
