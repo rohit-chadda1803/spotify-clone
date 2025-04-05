@@ -34,7 +34,7 @@ async function getsongs() {
 async function main() {
     // get the list of  songs . 
     
-    let currentSong
+    let currentSong ; 
 
     let songs = await getsongs()
 
